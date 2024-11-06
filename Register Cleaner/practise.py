@@ -14,11 +14,13 @@ def cleanFile(file,oldfile):
             header=members[0]
             members.pop(0)
 
+            # creating a list called inactive with members whose activity is no
             inactive=[]
             for member in members:
                 if "no" in member:
                     inactive.append(member)
 
+            #Moving cursor back to 0 and add header to both files , removing members with no from current file and adding to old
             writeFile.seek(0)
             writeFile.write(header)
             appendFile.write(header)
